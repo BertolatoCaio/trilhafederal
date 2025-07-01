@@ -12,10 +12,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import caioImg from "../../assets/Team_images/caio.jpeg";
-import kauaImg from "../../assets/Team_images/kaua.jpeg";
-import gamataImg from "../../assets/Team_images/gamata.jpeg";
-import cttImg from "../../assets/Team_images/ctt.jpeg";
+import caioImg from "../../assets/Members/caio.jpeg";
+import kauaImg from "../../assets/Members/kaua.jpeg";
+import gamataImg from "../../assets/Members/gamata.jpeg";
+import cttImg from "../../assets/Members/ctt.jpeg";
 import qrcodeImg from "../../assets/QRcode/qrcode_site.jpg";
 
 const TeamPage = () => {
@@ -74,7 +74,6 @@ const TeamPage = () => {
       {/* Header da Página */}
       <div className="team-header fade-in-up fade-delay-1">
         <div className="team-header-content">
-
           <div className="team-hero">
             <h1>Quem Somos</h1>
             <p className="team-subtitle">
@@ -145,14 +144,26 @@ const TeamPage = () => {
                 >
                   <div className="member-avatar">
                     {member.img ? (
-                      <img src={member.img} alt={member.name} className="avatar-img" />
+                      <img
+                        src={member.img}
+                        alt={member.name}
+                        className="avatar-img"
+                      />
                     ) : (
-                      <span className="avatar-emoji" role="img" aria-label="Avatar">👤</span>
+                      <span
+                        className="avatar-emoji"
+                        role="img"
+                        aria-label="Avatar"
+                      >
+                        👤
+                      </span>
                     )}
                   </div>
                   <div className="member-info">
                     <h3>{member.name}</h3>
-                    <p className="member-role">Estudante de Engenharia de Computação</p>
+                    <p className="member-role">
+                      Estudante de Engenharia de Computação
+                    </p>
                     <p className="member-bio">{member.desc}</p>
                   </div>
                 </div>
@@ -168,14 +179,14 @@ const TeamPage = () => {
             <div className="story-content">
               <div className="story-text">
                 <p>
-                  O projeto Trilha Federal começou em 2025, através de um projeto 
-                  pensado para a disciplina de "Filosofia da Tecnologia", 
-                  quando identificamos
-                  uma lacuna significativa no acesso à informação sobre
-                  instituições federais de ensino. Muitos estudantes,
-                  especialmente aqueles de escolas públicas ou de regiões menos
-                  favorecidas, não tinham acesso fácil a informações sobre
-                  vestibulares, cursos e oportunidades educacionais.
+                  O projeto Trilha Federal começou em 2025, através de um
+                  projeto pensado para a disciplina de "Filosofia da
+                  Tecnologia", quando identificamos uma lacuna significativa no
+                  acesso à informação sobre instituições federais de ensino.
+                  Muitos estudantes, especialmente aqueles de escolas públicas
+                  ou de regiões menos favorecidas, não tinham acesso fácil a
+                  informações sobre vestibulares, cursos e oportunidades
+                  educacionais.
                 </p>
                 <p>
                   Decidimos criar uma plataforma que centralizasse essas
@@ -215,10 +226,19 @@ const TeamPage = () => {
             <div className="qrcode-wide-container">
               <div className="qrcode-text">
                 <h3>Acesse o nosso site!</h3>
-                <p>Escaneie o QR code ao lado para acessar rapidamente em seu dispositivo móvel.<br/>Ideal para apresentações em sala de aula.</p>
+                <p>
+                  Escaneie o QR code ao lado para acessar rapidamente em seu
+                  dispositivo móvel.
+                  <br />
+                  Ideal para apresentações em sala de aula.
+                </p>
               </div>
               <div className="qrcode-img-wrapper">
-                <img src={qrcodeImg} alt="QR code do site Trilha Federal" className="qrcode-img" />
+                <img
+                  src={qrcodeImg}
+                  alt="QR code do site Trilha Federal"
+                  className="qrcode-img"
+                />
               </div>
             </div>
           </section>
