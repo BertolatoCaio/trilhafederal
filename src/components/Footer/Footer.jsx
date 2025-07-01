@@ -2,7 +2,6 @@ import React from "react";
 import "./Footer.css";
 import { FaEnvelope, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/Main_images/logo_site_img_005.png";
 
 const Footer = () => {
   return (
@@ -11,7 +10,11 @@ const Footer = () => {
         <div className="footer-section">
           <div className="footer-brand">
             <h3>
-              <img src={logo} alt="Trilha Federal" className="footer-logo" />
+              <img
+                src="/assets/Main_images/logo_site_img_005.png"
+                alt="Trilha Federal"
+                className="footer-logo"
+              />
               Trilha Federal
             </h3>
             <p>

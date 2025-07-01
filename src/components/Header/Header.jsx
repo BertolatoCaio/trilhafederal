@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from "../../assets/Main_images/logo_site_img_005.png";
 import { FaChevronDown } from "react-icons/fa";
 
 const Header = () => {
@@ -16,13 +15,17 @@ const Header = () => {
     <header className="header-container">
       <div className="header-content">
         <Link to="/" className="logo-container">
-          <img src={logo} alt="Trilha Federal Logo" className="logo-img" />
+          <img
+            src="/assets/Main_images/logo_site_img_005.png"
+            alt="Trilha Federal Logo"
+            className="logo-img"
+          />
           <span>Trilha Federal</span>
         </Link>
         <nav className="nav-links">
           <Link to="/">Início</Link>
           <a href="#sobre">Sobre</a>
-          
+
           <div className="dropdown-container">
             <button
               className="dropdown-trigger"

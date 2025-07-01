@@ -19,7 +19,6 @@ import {
   FaMapMarkerAlt,
   FaBuilding,
 } from "react-icons/fa";
-import alunosImg from "../../assets/Main_images/alunos_estudando_img_003.jpeg";
 import { Link } from "react-router-dom";
 
 const MainContent = () => {
@@ -45,7 +44,11 @@ const MainContent = () => {
             </div>
           </div>
           <div className="hero-image">
-            <img src={alunosImg} alt="Alunos estudando" className="hero-img" />
+            <img
+              src="/assets/Main_images/alunos.jpeg"
+              alt="Alunos estudando"
+              className="hero-img"
+            />
             <div className="hero-image-overlay"></div>
           </div>
         </div>

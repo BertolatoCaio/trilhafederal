@@ -12,33 +12,27 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import caioImg from "../../assets/Members/caio.jpeg";
-import kauaImg from "../../assets/Members/kaua.jpeg";
-import gamataImg from "../../assets/Members/gamata.jpeg";
-import cttImg from "../../assets/Members/ctt.jpeg";
-import qrCodeImage from "../../../public/QRcode/QRcode_site.jpg";
-
 
 const TeamPage = () => {
   const teamMembers = [
     {
       name: "Caio Bertolato",
-      img: caioImg,
+      img: "/assets/Members/caio.jpeg",
       desc: "Aluno de Engenharia de Computação do CEFET-MG e membro da equipe de competição Fórmula Cefast.",
     },
     {
       name: "Gabriel Expedito",
-      img: gamataImg,
+      img: "/assets/Members/gamata.jpeg",
       desc: "Aluno de Engenharia de Computação do CEFET-MG e técnico em Mecânica pela mesma instituição.",
     },
     {
       name: "Gabriel Carvalho",
-      img: cttImg,
-      desc: "Aluno de Engenharia de Computação do CEFET-MG e estagiário de desenvolvimento na GOL Airlines.",
+      img: "/assets/Members/ctt.jpeg",
+      desc: "Aluno de Engenharia de Computação do CEFET-MG e estagiário de desenvolvimento na GOL Linhas Aéreas.",
     },
     {
       name: "Kauã Faria",
-      img: kauaImg,
+      img: "/assets/Members/kaua.jpeg",
       desc: "Aluno de Engenharia de Computação do CEFET-MG e diretor de projetos da Commit Jr, empresa júnior de computação.",
     },
   ];
@@ -236,7 +230,7 @@ const TeamPage = () => {
               </div>
               <div className="qrcode-img-wrapper">
                 <img
-                  src={qrCodeImage}
+                  src="/assets/QRcode/QRcode_site.jpg"
                   alt="QR code do site Trilha Federal"
                   className="qrcode-img"
                 />
