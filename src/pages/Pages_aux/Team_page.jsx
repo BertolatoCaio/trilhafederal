@@ -16,7 +16,8 @@ import caioImg from "../../assets/Members/caio.jpeg";
 import kauaImg from "../../assets/Members/kaua.jpeg";
 import gamataImg from "../../assets/Members/gamata.jpeg";
 import cttImg from "../../assets/Members/ctt.jpeg";
-import qrcodeImg from "../../assets/QRcode/qrcode_site.jpg";
+import qrCodeImage from "../../../public/QRcode/QRcode_site.jpg";
+
 
 const TeamPage = () => {
   const teamMembers = [
@@ -31,7 +32,7 @@ const TeamPage = () => {
       desc: "Aluno de Engenharia de Computação do CEFET-MG e técnico em Mecânica pela mesma instituição.",
     },
     {
-      name: "Gabriel Silva",
+      name: "Gabriel Carvalho",
       img: cttImg,
       desc: "Aluno de Engenharia de Computação do CEFET-MG e estagiário de desenvolvimento na GOL Airlines.",
     },
@@ -235,7 +236,7 @@ const TeamPage = () => {
               </div>
               <div className="qrcode-img-wrapper">
                 <img
-                  src={qrcodeImg}
+                  src={qrCodeImage}
                   alt="QR code do site Trilha Federal"
                   className="qrcode-img"
                 />
