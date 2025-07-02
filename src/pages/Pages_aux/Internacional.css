@@ -278,6 +278,93 @@
   margin: 0 8px;
 }
 
+.programas-internacionais {
+  margin: 48px auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+.programas-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+.programa-card-internacional {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px rgba(30, 58, 138, 0.1);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 48%;
+  min-width: 340px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, #009c3b 0%, #3b82f6 100%) 1;
+}
+.programa-card-internacional:hover {
+  transform: translateY(-6px) scale(1.035);
+  box-shadow: 0 8px 40px rgba(30, 58, 138, 0.16);
+}
+.programa-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0e7ff 0%, #6366f1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.7rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
+}
+.programa-icon.swyaa {
+  background: linear-gradient(135deg, #e0e7ff 0%, #38bdf8 100%);
+}
+.programa-card-internacional h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  color: var(--primary-color, #3730a3);
+}
+.programa-desc {
+  font-size: 1.13rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+.programa-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+  width: 100%;
+}
+.programa-beneficios li {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+  text-align: left;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.06);
+}
+.btn.btn-primary {
+  margin-top: 0.7rem;
+  width: 100%;
+  max-width: 260px;
+  font-size: 1.13rem;
+  border-radius: 1.2rem;
+  padding: 1rem 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 1200px) {
   .hero-internacional,
   .destaque-programa,
@@ -296,6 +383,17 @@
   }
   .destaque-image {
     align-items: flex-start;
+  }
+  .programas-cards {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .programa-card-internacional {
+    width: 98vw;
+    max-width: 500px;
+    min-width: 0;
+    padding: 2rem 1rem 1.5rem 1rem;
   }
 }
 @media (max-width: 600px) {

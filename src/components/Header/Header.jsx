@@ -29,6 +29,24 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleScrollToSection = (sectionId) => (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400);
+    }
+  };
+
   const handleSobreClick = (e) => {
     e.preventDefault();
     if (location.pathname === "/") {
@@ -81,9 +99,18 @@ const Header = () => {
               className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <a href="#vestibulares">Vestibulares</a>
-              <Link to="/internacional">Trilha Internacional</Link>
-              <a href="#recursos">Ferramentas</a>
+              <a
+                href="#vestibulares"
+                onClick={handleScrollToSection("vestibulares")}
+              >
+                Vestibulares
+              </a>
+              <Link to="/internacional" onClick={scrollToTop}>
+                Trilha Internacional
+              </Link>
+              <a href="#recursos" onClick={handleScrollToSection("recursos")}>
+                Ferramentas
+              </a>
             </div>
           </div>
           <Link to="/quem-somos" onClick={scrollToTop}>
@@ -121,13 +148,19 @@ const Header = () => {
               <div className="mobile-dropdown">
                 <span>Recursos</span>
                 <div className="mobile-dropdown-menu">
-                  <a href="#vestibulares" onClick={closeMobileMenu}>
+                  <a
+                    href="#vestibulares"
+                    onClick={handleScrollToSection("vestibulares")}
+                  >
                     Vestibulares
                   </a>
-                  <Link to="/internacional" onClick={closeMobileMenu}>
+                  <Link to="/internacional" onClick={scrollToTop}>
                     Trilha Internacional
                   </Link>
-                  <a href="#recursos" onClick={closeMobileMenu}>
+                  <a
+                    href="#recursos"
+                    onClick={handleScrollToSection("recursos")}
+                  >
                     Ferramentas
                   </a>
                 </div>
