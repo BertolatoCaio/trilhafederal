@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -22,6 +22,31 @@ const Header = () => {
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSobreClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      const el = document.getElementById("sobre");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("sobre");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400); // tempo para garantir que a home carregue
+    }
+  };
+
   return (
     <header className="header-container">
       <div className="header-content">
@@ -34,8 +59,12 @@ const Header = () => {
           <span>Trilha Federal</span>
         </Link>
         <nav className="nav-links">
-          <Link to="/">Início</Link>
-          <a href="#sobre">Sobre</a>
+          <Link to="/" onClick={scrollToTop}>
+            Início
+          </Link>
+          <a href="#sobre" onClick={handleSobreClick}>
+            Sobre
+          </a>
 
           <div className="dropdown-container">
             <button
@@ -57,8 +86,12 @@ const Header = () => {
               <a href="#recursos">Ferramentas</a>
             </div>
           </div>
-          <Link to="/quem-somos">Quem Somos</Link>
-          <Link to="/contato">Contato</Link>
+          <Link to="/quem-somos" onClick={scrollToTop}>
+            Quem Somos
+          </Link>
+          <Link to="/contato" onClick={scrollToTop}>
+            Contato
+          </Link>
         </nav>
         <Link to="/contato" className="header-cta">
           <span>Entrar</span>
@@ -79,10 +112,10 @@ const Header = () => {
               onClick={(e) => e.stopPropagation()}
               aria-label="Menu principal mobile"
             >
-              <Link to="/" onClick={closeMobileMenu}>
+              <Link to="/" onClick={scrollToTop}>
                 Início
               </Link>
-              <a href="#sobre" onClick={closeMobileMenu}>
+              <a href="#sobre" onClick={handleSobreClick}>
                 Sobre
               </a>
               <div className="mobile-dropdown">
@@ -99,10 +132,10 @@ const Header = () => {
                   </a>
                 </div>
               </div>
-              <Link to="/quem-somos" onClick={closeMobileMenu}>
+              <Link to="/quem-somos" onClick={scrollToTop}>
                 Quem Somos
               </Link>
-              <Link to="/contato" onClick={closeMobileMenu}>
+              <Link to="/contato" onClick={scrollToTop}>
                 Contato
               </Link>
               <Link
