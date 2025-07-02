@@ -2,18 +2,42 @@ import React, { useState } from "react";
 import { FaEnvelope, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import "./Contact_page.css";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdkzbvjy";
+
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Aqui você pode integrar com backend ou serviço de email futuramente
+    setLoading(true);
+    setError("");
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setError("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+      }
+    } catch (err) {
+      setError("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -35,6 +59,7 @@ const ContactPage = () => {
                 onChange={handleChange}
                 required
                 placeholder="Seu nome"
+                disabled={loading}
               />
             </label>
             <label>
@@ -46,6 +71,7 @@ const ContactPage = () => {
                 onChange={handleChange}
                 required
                 placeholder="seu@email.com"
+                disabled={loading}
               />
             </label>
             <label>
@@ -58,22 +84,28 @@ const ContactPage = () => {
                 placeholder="Digite sua mensagem..."
                 rows={5}
                 style={{ resize: "none" }}
+                disabled={loading}
               />
             </label>
-            <button type="submit" className="contact-submit-btn">
-              Enviar
+            <button
+              type="submit"
+              className="contact-submit-btn"
+              disabled={loading}
+            >
+              {loading ? "Enviando..." : "Enviar"}
             </button>
             {submitted && (
               <div className="contact-success">
                 Mensagem enviada! Obrigado pelo contato.
               </div>
             )}
+            {error && <div className="contact-error">{error}</div>}
           </form>
           <div className="contact-info">
             <h2>Outros canais</h2>
             <div className="contact-info-item">
               <FaEnvelope className="contact-info-icon" />
-              <span>trilhafederal@email.com</span>
+              <span>atrilhafederal@gmail.com</span>
             </div>
             <div className="contact-info-item">
               <FaInstagram className="contact-info-icon" />

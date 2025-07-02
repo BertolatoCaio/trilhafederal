@@ -207,7 +207,7 @@ const TeamPage = () => {
                   Explorar Instituições
                 </Link>
                 <a
-                  href="mailto:contato@trilhafederal.com.br"
+                  href="mailto:atrilhafederal@gmail.com"
                   className="cta-button secondary"
                 >
                   Entre em Contato

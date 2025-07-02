@@ -61,7 +61,7 @@ Fundado em 2025 por quatro jovens estudantes do CEFET-MG, o Trilha Federal nasce
 
 ## Contato
 
-- **Email**: contato@trilhafederal.com.br
+- **Email**: atrilhafederal@gmail.com
 - **WhatsApp**: (31) 99999-9999
 - **Localização**: Belo Horizonte, MG - Brasil
 - **Instituição**: CEFET-MG - Centro Federal de Educação Tecnológica de Minas Gerais

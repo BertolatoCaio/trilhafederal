@@ -21,11 +21,8 @@ const Footer = () => {
               Democratizando o acesso à informação sobre vestibulares federais.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Email">
+              <a href="mailto:atrilhafederal@gmail.com" aria-label="Email">
                 <FaEnvelope />
-              </a>
-              <a href="#" aria-label="WhatsApp">
-                <FaWhatsapp />
               </a>
               <a
                 href="https://instagram.com/atrilhafederal"
@@ -76,10 +73,7 @@ const Footer = () => {
           <h4>Contato</h4>
           <div className="contact-info">
             <p>
-              <FaEnvelope /> contato@trilhafederal.com.br
-            </p>
-            <p>
-              <FaWhatsapp /> (31) 99999-9999
+              <FaEnvelope /> atrilhafederal@gmail.com
             </p>
             <p>📍 Belo Horizonte, MG - Brasil</p>
           </div>
