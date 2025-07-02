@@ -189,3 +189,55 @@
     align-self: unset;
   }
 }
+
+@media (max-width: 600px) {
+  .contact-header {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border-radius: 1rem;
+    max-width: 98vw;
+  }
+  .contact-header h1 {
+    font-size: 1.3rem;
+  }
+  .contact-header p {
+    font-size: 1rem;
+  }
+  .contact-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 98vw;
+    margin-top: 1.2rem;
+  }
+  .contact-form,
+  .contact-info {
+    min-width: 0;
+    width: 100%;
+    max-width: 98vw;
+    padding: 1.2rem 0.7rem;
+    border-radius: 0.7rem;
+    font-size: 0.98rem;
+    box-sizing: border-box;
+  }
+  .contact-form label {
+    font-size: 1rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.7rem;
+  }
+  .contact-submit-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .contact-info h2 {
+    font-size: 1.1rem;
+  }
+  .contact-info-item {
+    font-size: 0.98rem;
+    gap: 0.5rem;
+  }
+  .contact-info-icon {
+    font-size: 1.1rem;
+  }
+}
