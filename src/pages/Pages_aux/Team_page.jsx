@@ -11,7 +11,7 @@ import {
   FaGithub,
   FaEnvelope,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const TeamPage = () => {
   const teamMembers = [
@@ -63,6 +63,27 @@ const TeamPage = () => {
         "Mantemos o compromisso com a clareza em nossas ações para construir confiança com nossos usuários.",
     },
   ];
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleInstituicoesClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      const el = document.getElementById("vestibulares");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("vestibulares");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400);
+    }
+  };
 
   return (
     <div className="team-page">
@@ -203,9 +224,13 @@ const TeamPage = () => {
                 Sua jornada começa aqui.
               </p>
               <div className="cta-buttons">
-                <Link to="/" className="cta-button primary">
+                <a
+                  href="#vestibulares"
+                  className="cta-button primary"
+                  onClick={handleInstituicoesClick}
+                >
                   Explorar Instituições
-                </Link>
+                </a>
                 <a
                   href="mailto:atrilhafederal@gmail.com"
                   className="cta-button secondary"
